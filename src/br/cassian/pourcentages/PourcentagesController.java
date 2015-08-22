@@ -1,45 +1,43 @@
 package br.cassian.pourcentages;
 
 import java.math.BigDecimal;
-import java.net.URL;
-import java.util.ResourceBundle;
 
+import br.cassian.pourcentages.util.Utilities;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import br.cassian.pourcentages.util.Utilities;
 
 public class PourcentagesController {
-	@FXML 
+	@FXML
 	private TextField value1TextField;
-	
-	@FXML 
+
+	@FXML
 	private TextField value2TextField;
 
-	@FXML 
+	@FXML
 	private TextField percentTextField;
-	
-	@FXML 
+
+	@FXML
 	private Text errorText;
-	
+
 	@FXML
 	private Text text1;
-	
+
 	@FXML
 	private Text text2;
-	
+
 	@FXML
 	private Text text3;
-	
+
 	@FXML
 	private Text text4;
-	
+
 	@FXML
 	private Text text5;
-	
+
 	@FXML
 	private Text text6;
-	
+
 	@FXML
 	public void initialize() {
 		text1.setText("Ce programme calcule l'accroissement de la ");
@@ -48,17 +46,17 @@ public class PourcentagesController {
 		text4.setText("valeur 2 ");
 		text5.setText(", en pourcentage. \n\nRenseignez les deux valeurs puis cliquez sur ");
 		text6.setText("Calculer");
-		
+
 	}
-	
+
 	@FXML
 	private void calculateButtonPressed() {
 		try {
 		errorText.setText("");
-		
+
 		String value1String = Utilities.trimNumberString(value1TextField.getText());
 		String value2String = Utilities.trimNumberString(value2TextField.getText());
-		
+
 		BigDecimal from = Utilities.stringToBigDecimal(value1String);
 		BigDecimal to = Utilities.stringToBigDecimal(value2String);
 
